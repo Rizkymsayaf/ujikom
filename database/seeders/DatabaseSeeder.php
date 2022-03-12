@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
-use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Rizky',
             'username' => 'rizky',
             'email' => 'Rizky@gmail.com',
-            'password' => bcrypt('12345')
+            'password' => bcrypt('12345'),
+            'is_admin' => '1',
         ]);
         // User::create([
         //     'name' => 'Doddy',
@@ -29,19 +30,19 @@ class DatabaseSeeder extends Seeder
         //     'password' => bcrypt('12345')
         // ]);
 
-          User::factory(3)->create();
+        User::factory(3)->create();
 
         Category::create([
-         'name' => 'Web Programming',
-         'slug' => 'web-programming'
+            'name' => 'Web Programming',
+            'slug' => 'web-programming',
         ]);
         Category::create([
-         'name' => 'Web Design',
-         'slug' => 'web-design'
+            'name' => 'Web Design',
+            'slug' => 'web-design',
         ]);
         Category::create([
-         'name' => 'Personal',
-         'slug' => 'personal'
+            'name' => 'Personal',
+            'slug' => 'personal',
         ]);
 
         Post::factory(5)->create();
